@@ -1,0 +1,36 @@
+import React, { useState } from "react";
+import Tab from "react-bootstrap/Tab";
+import "bootstrap/dist/css/bootstrap.css";
+
+import Tabs from "react-bootstrap/Tabs";
+import LoanDetails from "../components/LoanDetails";
+import PersonalDetails from "../components/PersonalDetails";
+import BusinessDetails from "../components/BusinessDetails";
+const MainPage = () => {
+  const [key, setKey] = useState("home");
+
+  return (
+    <div
+      style={{
+        display: "block",
+        width: "100%",
+        padding: 30,
+
+        backgroundColor: "lightgrey",
+      }}
+    >
+      <Tabs defaultActiveKey="peronaldetails">
+        <Tab eventKey="peronaldetails" title="PesonalDetails">
+          <PersonalDetails />
+        </Tab>
+        <Tab eventKey="businessdetails" title="BusinessDetails">
+          <BusinessDetails />
+        </Tab>
+        <Tab eventKey="loandetails" title="LoanDetails">
+          <LoanDetails />
+        </Tab>
+      </Tabs>
+    </div>
+  );
+};
+export default MainPage;
